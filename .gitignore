@@ -1,3 +1,14 @@
+# Ignore all
+*
+
+# Unignore all with extensions
+!*.*
+
+# Unignore all dirs
+!*/
+
+####### Begin Standard .gitignore #######
+
 # Compiled Object files
 *.slo
 *.lo
