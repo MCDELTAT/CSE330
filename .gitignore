@@ -1,13 +1,5 @@
-# Ignore all
-*
-
-# Unignore all with extensions
-!*.*
-
-# Unignore all dirs
-!*/
-
-####### Begin Standard .gitignore #######
+#Ignore lab1 exec
+./lab01/lab01
 
 # Compiled Object files
 *.slo
