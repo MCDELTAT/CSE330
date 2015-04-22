@@ -1,8 +1,11 @@
-#include "d_time24.h"
+#include <iostream>
+#include "time12.h"
 
 int main(){
-	time24 t(0, 15);
+	time12 t(11, 40, 0);
 	t.writeTime();
-	cout << "\n";
+	t.addTime(90);
+	t.writeTime();
+	std::cout << "\n";
 	return 0;
 }
