@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <string>
 
 //maintains clock time
 class time12{
@@ -57,7 +58,21 @@ void time12::addTime(int m){
 
 //Input Time
 void time12::readTime(){
+	std::string tempTimeUnit; 
 
+	std::cout << "Please type in the hour, from 1 to 12: ";
+	std::cin >> hour;
+	std::cout << "Please type in the minutes, from 0 to 59: ";
+	std::cin >> minute;
+	std::cout << "Is it AM or PM? Please respond: ";
+	std::cin >> tempTimeUnit;
+
+	if (tempTimeUnit == "AM"){
+		timeUnit = 0; //Set timeUnit to AM
+	}
+	else if(tempTimeUnit == "PM"){
+		timeUnit = 1; //Set timeUnit to PM
+	}
 }
 
 //Output Time
@@ -73,13 +88,3 @@ void time12::writeTime(){
    		std::cout << "PM" << "\n";
    	}
 }
-
-/* 
-Example: 
-time12 t(8,15, AM);
-
-t.writeTime(); 		//Output: 8:15 AM
-t.readTIme();		//Input: 12:00 PM
-t.addTime(180);		//add 3hours to t
-t.writeTime();		//Output: 3:00 PM
-*/
