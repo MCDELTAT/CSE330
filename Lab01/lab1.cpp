@@ -9,3 +9,13 @@ int main(){
 	std::cout << "\n";
 	return 0;
 }
+
+/* 
+Example: 
+time12 t(8,15, AM);
+
+t.writeTime(); 		//Output: 8:15 AM
+t.readTIme();		//Input: 12:00 PM
+t.addTime(180);		//add 3hours to t
+t.writeTime();		//Output: 3:00 PM
+*/
