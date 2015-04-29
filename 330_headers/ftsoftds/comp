@@ -1,0 +1,8 @@
+#!/bin/csh
+
+# change this to the location of the book header files
+set DISTINCLUDE="/usr/local/ftsoftds/include"
+# change this to the location of the graphics library file
+set DISTLIB="/usr/local/ftsoftds/lib"
+
+c++ -D__unix -I$DISTINCLUDE -I/usr/X11R6/include -o "$1:r" $1 -L $DISTLIB -lezdraw -L /usr/X11R6/lib -lXaw -lXmu -lXt -lX11

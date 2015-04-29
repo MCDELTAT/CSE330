@@ -1,0 +1,38 @@
+ACKNOWLEGEMENT:
+
+	The authors would like to thank Christian Kreiner of the Institut f.
+	Technische Informatik, Technische Universitaet Graz, 
+	Graz, Austria for developing the X implemention of the
+	graphics software.
+
+CONTENTS of this directory:
+
+ezdraw.c 
+   X11/unix implementation of EzDraw graphics library (v. 1.7)
+   needed to run example programs from the books
+   Ford/Topp: "Introduction to Computing using C++ and Object Technology"
+	and "Data Structures with C++ using STL" on X11/Unix boxes.
+  
+ezdraw.h
+   modified header file for graphics package based on the version
+   supplied with the books (use -D__unix compiler switch)
+
+   dependencies:
+      X11 Window System (Xlib, X-Toolkit, Athena widgets)
+   tested with with the following OS/compiler configurations: 
+      FreeBSD 2.2.x and 3.1 / g++ (2.7.2.1) 
+      LINUX / g++
+      Solaris7 / g++ (2.7.2/2.95.2)
+    
+comp.ezd
+   script to compile  ezdraw.c and build library libezdraw.a
+
+
+INSTRUCTIONS:
+
+Run "./comp.ezd" to compile the graphics library.
+
+Copy libezdraw.a  to /usr/local/ftsoft/lib for
+	Introduction to Computing using C++ and Object Technology
+or to /usr/local/ftsoftds/lib for
+	Data Structures with C++ using STL
