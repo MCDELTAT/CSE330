@@ -1,3 +1,10 @@
+//Class: CSE330
+//Term: Spring 2015
+//Instructor: George M. Georgiou
+//Names: Richard Morones and Aaron Chamberlain
+//Lab 1
+//12 Hour Time Implementation
+
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -37,7 +44,6 @@ time12::time12(int h, int m, bool tunit) : hour(h), minute(m), timeUnit(tunit)
 //Ensures that time is readable ranges (hours 1-12 and minutes 0-59).
 void time12::normalizeTime()
 {
-
 	int extraHours = minute / 60;
 	minute %= 60;
 
@@ -51,7 +57,7 @@ void time12::normalizeTime()
    		backupTimeUnit = 1; //backup for check later
    		timeUnit = 0;
    	}
-   	//to fix the changes time Unit incorrectly at 12 thing.
+   	//Fixes bug where timeUnit changed incorrectly at 12AM/PM.
    	//If it's AM and we add only one hour, make sure it's the same time unit
    	if (hour==12 && extraHours<=11 && backupTimeUnit==0){
    		timeUnit = 0;
@@ -61,7 +67,9 @@ void time12::normalizeTime()
    		timeUnit = 1;
    	}
 
+   	//set the hour
 	hour = addedTime % 12;
+	//ensure hour isn't 0.
 	if (hour==0){
 		hour += 12;
 	}
@@ -94,9 +102,11 @@ void time12::readTime(){
 
 //Output Time
 void time12::writeTime(){
+	//Output Hour
 	std::cout << hour << ':';
+	//For single digit minute values, add a leading zero.
    	if (minute<=9){
-   		std::cout << "0"; //For single digit minute values, leading zero.
+   		std::cout << "0"; 
    	}
    	//Output minute
    	std::cout << minute << "  ";
