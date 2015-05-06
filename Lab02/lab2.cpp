@@ -53,7 +53,7 @@ int main(){
 	seqSearch(int_chk, 0, 8, 10);
 	cout << "\n";
 
-	cout << "Searching for 10" << endl;
+	cout << "Searching for 35" << endl;
 	seqSearch(int_chk, 1, 6, 35);
 	cout << "\n";
 
