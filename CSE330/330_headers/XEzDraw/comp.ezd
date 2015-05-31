@@ -1,0 +1,5 @@
+#!/bin/csh
+
+g++ -c -g  -D__unix -DNeedFunctionPrototypes  -I . -I /usr/X11R6/include ezdraw.c
+ar -ruv libezdraw.a ezdraw.o
+

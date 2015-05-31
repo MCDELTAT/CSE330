@@ -1,0 +1,51 @@
+The contents of the directory are as follows:
+
+include:
+	The class header files
+
+ch1 - ch16:
+	The chapter programs
+
+lib:
+	Must contain the graphics library archive.
+	See the file ../XEzDraw/README for directions on
+	generating this archive for your system.
+
+comp:
+	A C Shell script that can be used to compile any program
+	in the book.  For instance, the example compiles "prg1_1.cpp" and
+	creates the executable file "prg1_1". Type "prg1_1" to
+	run the program.
+
+		% comp prg1_1.cpp
+		% prg1_1
+
+
+	It is recommended that the system administrator copy "comp"
+	to "/usr/local/bin" so it is accessible to all users.
+
+	You must change the shell variables "DISTINCLUDE" and "DISTLIB"
+	in the shell script to specify the location of the book header 
+	and graphics library files. It is recommended that the distribution
+	be kept in "/usr/local/ftsoftds".
+
+prwindow:
+	Shell script that prints a window created by the graphics
+	system to a postscript printer. For instance, these commands
+	compile and run the application "prg15_ruler" in ch15 and send
+	the output to a postscript printer.
+
+		% comp prg15_ruler.cpp
+		% prwindow  prg15_ruler
+
+	When the user clicks the mouse while it is over the window,
+	the graphic is printed on the default printer, which must be
+	able to handle postscript. 
+
+
+	The script assumes that the ImageMagick package has been installed
+	and uses the application "convert" from the package. Obtain the
+	package from the site "http://www.imagemagick.org/". It is
+	recommended that the system administrator copy "prwindow"
+	to "/usr/local/bin" so it is accessible to all users.
+
