@@ -1,6 +1,6 @@
-#include &lt;iostream>
-#include &lt;string>
-#include &lt;cassert>
+#include <iostream>
+#include <string>
+#include <cassert>
 #include "Vector.h"
 
 using namespace std;
@@ -8,12 +8,12 @@ using namespace std;
 int main()
 {  
 
-   Vector&lt;int> v;
+   Vector<int> v;
 
    v.reserve(2);
    assert(v.capacity() == 2);
         
-   Vector&lt;string> v1(2);
+   Vector<string> v1(2);
    assert(v1.capacity() == 2);
    assert(v1.size() == 2);
    assert(v1[0] == "");
@@ -22,13 +22,13 @@ int main()
    v1[0] = "hi";
    assert(v1[0] == "hi");
         
-   Vector&lt;int> v2(2, 7);
+   Vector<int> v2(2, 7);
    assert(v2[1] == 7);
 
-   Vector&lt;int> v10(v2);
+   Vector<int> v10(v2);
    assert(v10[1] == 7);
 
-   Vector&lt;string> v3(2, "hello");
+   Vector<string> v3(2, "hello");
    assert(v3.size() == 2);
    assert(v3.capacity() == 2);
    assert(v3[0] == "hello");
@@ -38,7 +38,7 @@ int main()
    assert(v3.size() == 1);
    assert(v3[0] == "hello");
 
-   Vector&lt;string> v4 = v3;
+   Vector<string> v4 = v3;
    assert(v4.size() == 1);
    assert(v4[0] == v3[0]);
    v3[0] = "test";
@@ -48,15 +48,15 @@ int main()
    v3.pop_back();
    assert(v3.size() == 0);
 
-   Vector&lt;int> v5(7, 9);
-   Vector&lt;int>::iterator it = v5.begin();
+   Vector<int> v5(7, 9);
+   Vector<int>::iterator it = v5.begin();
    while (it != v5.end())
    {
       assert(*it == 9);
       ++it;
    }
 
-   Vector&lt;int> v6;
+   Vector<int> v6;
    v6.push_back(100);
    assert(v6.size() == 1);
    assert(v6[0] == 100);
@@ -65,5 +65,5 @@ int main()
    assert(v6[0] == 100);
    v6.push_back(101);
 
-   cout &lt;&lt; "SUCCESS\n";
+   cout << "SUCCESS\n";
 }

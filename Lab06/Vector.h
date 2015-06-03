@@ -149,7 +149,7 @@ typename Vector<T>::iterator Vector<T>::begin()
 // return an iterator pointing to one past the last element
 template <typename T>
 typename Vector<T>::iterator Vector<T>::end(){
-         //I don't know what to return here/get there.
+         return buffer + my_size;
 }            
 
 // return a reference to the first element
@@ -239,7 +239,7 @@ void Vector<T>::resize(unsigned int size){
          reserve(size);
       }
       while (origSize < size){
-            buffer[origSize] = 0; //starts at one past the original end Index
+            buffer[origSize] = T(); //starts at one past the original end Index
             origSize++;
       }      
    }
