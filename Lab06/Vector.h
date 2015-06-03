@@ -13,6 +13,7 @@ public:
 
    typedef T * iterator;
 
+   //This block done
    Vector();
    Vector(unsigned int size);
    Vector(unsigned int size, const T & initial);
@@ -73,14 +74,42 @@ Vector<T>::Vector(unsigned int size){
       }
 }
 
-
-/*//Constructor for Vector with n elements of the same value
+//Constructor for Vector with n elements of the same value
 template <class T>
-Vector<T>::Vector(size, &initial){
+Vector<T>::Vector(unsigned int size, const T &initial){
+   int i;
+   //If size == 0 both capacity and size are zero and buffer is NULL
+   if (size == 0){
+      return;
+   }
+   reserve(size);
+   //assign function size to internal size
    my_size = size;
-   my_capacity = 
+   //copy the default template parameter into each element of buffer
+   for (i=0; i<my_size; i++){
+      buffer[i] = initial; //set each value to initial value
+   }
 
-}*/
+}
+
+// copy constructor
+template <typename T>
+Vector<T>::Vector(const Vector<T> & v){     
+   int i;
+
+   // if size is 0, Size/Capacity are 0 and buffer is NULL -> return
+   if (v.my_size == 0)
+      return;
+
+   // set capacity to v.my_size. 
+   reserve(v.my_size);
+   // assign size to v.my_size
+   my_size = v.my_size;
+
+   // copy items from the v.buffer to the new array
+   for (i = 0; i < my_size; i++)
+      buffer[i] = v.buffer[i];
+}
 
 //Deconstructor for the vector class
 template <class T>
