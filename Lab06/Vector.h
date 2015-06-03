@@ -212,13 +212,9 @@ void Vector<T>::reserve(unsigned int capacity){
       }
    }
 
-
-   //Need to fix this before finished, as it will eventually fill up RAM completely. 
-   //For now, comment to make compiler happy.   
-   //mal_alloc "pointer being freed was not allocated"  
-   /*if (buffer !=NULL){
+   if (buffer !=NULL){
       delete [] buffer;
-   }*/
+   }
 
    //update pointers
    buffer = newBuffer; //update data
