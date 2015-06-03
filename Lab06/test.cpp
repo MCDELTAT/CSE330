@@ -29,28 +29,5 @@ int main(){
 		test.pop_back();
 	}
 
-	//Test for assignment operator
-	Vector <int> a(5);
-	int k=0;
-	while (k<5){
-		a[k] = k;
-		k++;
-	}
-
-	k=0;//reset counter
-	while (k<5){
-		cout << "Value at index " << k << " is: " << a[k] << ". \n";
-		k++;
-	}
-
-	Vector <int> copy(5);
-	//copy = a;
-
-	k=0;//reset counter
-	while (k<5){
-		cout << "Value at index " << k << " is: " << copy[k] << ". \n";
-		k++;
-	}
-
 	return 0;
 }
