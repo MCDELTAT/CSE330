@@ -230,9 +230,9 @@ void Vector<T>::reserve(unsigned int capacity){
 template <typename T>
 void Vector<T>::resize(unsigned int size){
    //first condition
-   if (size > buffer.size()){
+   if (size > my_size){
       //int endIndex = buffer.size() - 1; //get last index before resize to know where to begin
-      int origSize = buffer.size(); //get size before format
+      int origSize = my_size; //get size before format
       //make sure there is enough capacity for the new numbers
       if (my_capacity < size){
          //if true, need to reserve more space, then resize
@@ -241,11 +241,12 @@ void Vector<T>::resize(unsigned int size){
       while (origSize < size){
             buffer[origSize] = 0; //starts at one past the original end Index
             origSize++;
+      }      
    }
    //second condition
-   if (size < buffer.size()){
+   if (size < my_size){
       //get how many spaces I need to delete
-      int d = buffer.size() - size;
+      int d = my_size - size;
       while (d != 0){
          my_size--; //delete last element
          d--; //decrement counter
@@ -254,8 +255,8 @@ void Vector<T>::resize(unsigned int size){
 }      
 
 //Operator to allow element access
-template <class T>
-T & Vector<T>::operator[](unsigned int index){
+template <typename T>
+T& Vector<T>::operator[](unsigned int index){
    //by using unsigned int, value can't be neg so check to make sure index isn't past
    //upper limits
    if (index >= my_size)
