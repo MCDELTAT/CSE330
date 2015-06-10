@@ -1,3 +1,10 @@
+// Class: CSE 330
+// Term: Spring 2015
+// Instructor: George M. Georgiou
+// Name(s): Aaron Chamberlain & Richard Morones
+// Lab 7
+// Title: Time Complexity of the Sieve of Eratosthenes With Vectors
+
 #include <iostream>
 #include <iomanip>
 #include <vector>
